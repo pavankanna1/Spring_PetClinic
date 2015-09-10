@@ -6,8 +6,8 @@ org\springframework\samples\petclinic\repository\jdbc\JdbcPet.class
 org\springframework\samples\petclinic\repository\jpa\JpaVisitRepositoryImpl.class
 org\springframework\samples\petclinic\repository\jpa\JpaOwnerRepositoryImpl.class
 org\springframework\samples\petclinic\repository\jdbc\JdbcPetRowMapper.class
-org\springframework\samples\petclinic\web\CrashController.class
 org\springframework\samples\petclinic\service\ClinicService.class
+org\springframework\samples\petclinic\web\CrashController.class
 org\springframework\samples\petclinic\repository\VetRepository.class
 org\springframework\samples\petclinic\web\VisitController.class
 org\springframework\samples\petclinic\model\Specialty.class
@@ -38,6 +38,5 @@ org\springframework\samples\petclinic\web\PetController.class
 org\springframework\samples\petclinic\web\VetController.class
 org\springframework\samples\petclinic\model\BaseEntity.class
 org\springframework\samples\petclinic\web\OwnerController.class
-com\paypal\sdk\openidconnect\UserinfoParameters.class
 org\springframework\samples\petclinic\model\Person.class
 org\springframework\samples\petclinic\repository\PetRepository.class
