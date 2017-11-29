@@ -1,5 +1,5 @@
 pipeline {
-    agent { Ansible-Agent 'maven:3.3.3' }
+    node { Ansible-Agent 'maven:3.3.3' }
     stages {
         stage('build') {
             steps {
