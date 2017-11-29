@@ -3,13 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.samples</groupId>
 	<artifactId>spring-petclinic</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.3-SNAPSHOT</version>
 
 	<name>petclinic</name>
 	<packaging>war</packaging>
-
+  <scm>        
+    <connection>scm:git:https://github.com/pavankanna/Spring_PetClinic.git</connection>
+	<url>https://github.com/pavankanna/Spring_PetClinic.git</url>
+      <tag>HEAD</tag>
+  </scm>
+	
 	<properties>
-
+	
 	
 
 		<!-- Generic properties -->
@@ -17,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<!-- Spring -->
+		<!-- Spring Hybernates-->
 		<spring-framework.version>4.1.1.RELEASE</spring-framework.version>
 		<spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>
 
@@ -460,8 +465,23 @@
 			    </execution>
 		       </executions>
              </plugin> -->
+
 			</plugins>
-	</build>
+			   <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.2</version>
+                    <configuration>
+                        <tagBase>https://github.com/pavankanna/Spring_PetClinic.git</tagBase>
+                        <releaseProfiles>release</releaseProfiles>
+                    </configuration>
+                </plugin>               
+            </plugins>
+        </pluginManagement>
+
+			</build>
 	<url>demopetclinic</url>
 
 	<reporting>
@@ -490,7 +510,6 @@
                 </excludeRoots> -->
 				  <rulesets>
                     <ruleset>${basedir}/pmd.xml</ruleset>
-           
         </rulesets>
 
             </configuration>
@@ -513,50 +532,7 @@
 
 				</configuration>	
             </plugin>
-			
+
     </plugins>
 </reporting>
-
-<distributionManagement>
-  <repository>
-    <id>releases</id>
-    <url>http://10.202.99.147:8082/nexus-2.8.0/content/repositories/releases</url>
-  </repository>
-    <snapshotRepository>
-    <id>snapshots</id>
-    <url>http://10.202.99.147:8082/nexus-2.8.0/content/repositories/snapshots</url>
-  </snapshotRepository>
-</distributionManagement>
-
-<profiles>
-      <profile>
-      <id>test</id>
-      <build>
-      <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.1</version>
-            <executions>
-               <execution>
-                  <phase>package</phase>
-                  <goals>
-                     <goal>run</goal>
-                  </goals>
-                  <configuration>
-                  <tasks>
-                     <echo>Using env.test.properties</echo>
-                     <copy file="src/main/resources/logback.xml" tofile="${project.build.outputDirectory}/env.properties"/>
-                  </tasks>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-      </plugins>
-      </build>
-      </profile>
-   </profiles>
-
-
-
 	</project>
