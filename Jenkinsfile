@@ -4,6 +4,9 @@ pipeline {
       label 'Ansible-Agent'
     }
 	}
+	def yum = { packages ->
+    ["sudo yum install -y zip unzip telnet"] }
+	
     stages {
         stage('build') {
             steps {
