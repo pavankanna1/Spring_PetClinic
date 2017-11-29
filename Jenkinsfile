@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-			    sh 'yum install git -y'
-                sh 'mvn --version'
+			    sh 'mvn clean install'
             }
         }
     }
